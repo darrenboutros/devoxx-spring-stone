@@ -76,6 +76,9 @@
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
 				<extensions>true</extensions>
+				<configuration>
+					<baseClassForTests>fr.devoxx.spring.stone.StoneContractTest</baseClassForTests>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
