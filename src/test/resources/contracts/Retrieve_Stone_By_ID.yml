@@ -1,0 +1,11 @@
+request:
+  method: GET
+  url: /v1/stone/3
+response:
+  status: 200
+  body:
+    id: 3
+    name: Space
+    color: Blue
+  headers:
+    Content-type: application/json;charset=UTF-8
