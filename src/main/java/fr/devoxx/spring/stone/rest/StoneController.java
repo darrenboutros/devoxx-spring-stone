@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.devoxx.spring.stone.model.Stone;
 import fr.devoxx.spring.stone.service.StoneService;
+import fr.devoxx.spring.stone.utils.NotFoundException;
 
 @RestController
 @RequestMapping("/v1")
@@ -21,7 +22,7 @@ public class StoneController {
 	
 	@GetMapping(value= "/stone/{stonePosition}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Stone findStoneById(@PathVariable Integer stonePosition) {
-		return stoneService.findById(stonePosition);
+		return stoneService.findById(stonePosition).orElseThrow(() -> new NotFoundException(stonePosition));
 	}
 	
 	@GetMapping(value= "/stones", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)

@@ -1,13 +1,10 @@
 package fr.devoxx.spring.stone.service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,8 +32,8 @@ public class StoneService {
 //		super();
 //	}
 
-	public Stone findById(Integer id) {
-		return stoneRepository.findById(id).get();
+	public Optional<Stone> findById(Integer id) {
+		return stoneRepository.findById(id);
 	}
 
 	public List<Stone> findAll(){
