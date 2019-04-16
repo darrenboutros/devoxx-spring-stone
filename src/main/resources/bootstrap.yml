@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    consul:
+      config:
+        watch:
+          enabled: true
+    
+      discovery:
+        instance-id: ${spring.application.name}:${random.value}
+          
+  application:
+    name: stone-service
