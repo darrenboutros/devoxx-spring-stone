@@ -7,6 +7,8 @@ spring:
     
       discovery:
         instance-id: ${spring.application.name}:${random.value}
+        tags:        - urlprefix-/v1/stone/{stonePosition}
+        - urlprefix-/v1/stones
           
   application:
     name: stone-service
